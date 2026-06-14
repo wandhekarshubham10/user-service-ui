@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 // Swap this URL with your live Render backend URL once deployed!
-const API_BASE_URL = 'http://localhost:8080/api/users';
+// Vite reads the environment variable at runtime. 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api/users';
 
 export default function App() {
   const [users, setUsers] = useState([]);
